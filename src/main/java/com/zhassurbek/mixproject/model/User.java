@@ -1,8 +1,9 @@
 package com.zhassurbek.mixproject.model;
 
 import jakarta.persistence.*;
+//import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 import lombok.Data;
-import org.antlr.v4.runtime.misc.NotNull;
 
 @Data
 @Entity
