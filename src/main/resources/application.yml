@@ -1,8 +1,8 @@
 spring:
   datasource:
     username: postgres
-    password: zhassurbek
-    url: jdbc:postgresql://localhost:5432/mix_spring
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/db_name
 
   # Hibernate properties
   jpa:
@@ -13,8 +13,8 @@ spring:
   # Security
 #  security:
 #    user:
-#      name: admin
-#      password: passw@rd
+#      name: admininstrator
+#      password: password
 
 server:
   port: 8090
