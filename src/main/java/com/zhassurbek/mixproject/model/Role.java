@@ -1,5 +1,5 @@
 package com.zhassurbek.mixproject.model;
 
-public enum UserRole {
+public enum Role {
     USER, ADMIN
 }

@@ -32,21 +32,23 @@ public class User implements UserDetails {
     @NotNull
     @Column(unique = true)
     private String username;
+
+    @Column(unique = true)
     private String email;
     private String password;
 
-    private UserRole role;
-
-
-    @Override
-    public String getUsername() {
-        return username;
-    }
-
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+
+    @Override
+    public String getUsername() {
+        // email in our case
+        return email;
     }
 
     @Override
@@ -69,3 +71,36 @@ public class User implements UserDetails {
         return true;
     }
 }
+//
+//
+//    @Override
+//    public String getUsername() {
+//        return username;
+//    }
+//
+//
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        return List.of(new SimpleGrantedAuthority(role.name()));
+//    }
+//
+//    @Override
+//    public boolean isAccountNonExpired() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isAccountNonLocked() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isCredentialsNonExpired() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isEnabled() {
+//        return true;
+//    }
+

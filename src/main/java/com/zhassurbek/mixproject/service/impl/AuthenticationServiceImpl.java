@@ -4,8 +4,8 @@ import com.zhassurbek.mixproject.dao.request.SignInRequestDto;
 import com.zhassurbek.mixproject.dao.request.SignUpRequestDto;
 import com.zhassurbek.mixproject.dao.response.JwtAuthenticationResponseDto;
 import com.zhassurbek.mixproject.jpaRepo.UserRepository;
+import com.zhassurbek.mixproject.model.Role;
 import com.zhassurbek.mixproject.model.User;
-import com.zhassurbek.mixproject.model.UserRole;
 import com.zhassurbek.mixproject.service.security.AuthenticationService;
 import com.zhassurbek.mixproject.service.security.JwtService;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     public JwtAuthenticationResponseDto signup(SignUpRequestDto request) {
         var user = User.builder().name(request.getName()).surname(request.getSurname())
                 .username(request.getUsername()).password(passwordEncoder.encode(request.getPassword()))
-                .role(UserRole.USER).build();
+                .role(Role.USER).build();
         userRepository.save(user);
         var jwt = jwtService.generateToken(user);
         return JwtAuthenticationResponseDto.builder().token(jwt).build();
