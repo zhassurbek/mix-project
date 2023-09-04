@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
     public ResponseEntity<User> createUser(User user) {
         logger.info("Вызвано метод по созданию юзера(username): " + user.getUsername());
         userRepository.save(user);
-        logger.info("Id: " + user.getId() + ", name: " + user.getName());
+        logger.info("Id: " + user.getId() + ", name: " + user.getFirstName());
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
@@ -65,10 +65,10 @@ public class UserServiceImpl implements UserService {
     public User updateUserByUsername(User user, String username) {
 //        String currentUsername = username;
         User beforeUpdateUser = userRepository.findByUsername(username);
-        if (user.getName() != null) {
-            beforeUpdateUser.setName(user.getName());
-        } else if (user.getSurname() != null) {
-            beforeUpdateUser.setSurname(user.getSurname());
+        if (user.getFirstName() != null) {
+            beforeUpdateUser.setFirstName(user.getFirstName());
+        } else if (user.getLastName() != null) {
+            beforeUpdateUser.setLastName(user.getLastName());
         } else if (user.getEmail() != null) {
             beforeUpdateUser.setEmail(user.getEmail());
         } else if (user.getPassword() != null) {

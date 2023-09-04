@@ -23,7 +23,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final AuthenticationManager authenticationManager;
     @Override
     public JwtAuthenticationResponseDto signup(SignUpRequestDto request) {
-        var user = User.builder().name(request.getName()).surname(request.getSurname())
+        var user = User.builder().firstName(request.getName()).lastName(request.getSurname())
                 .username(request.getUsername()).password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER).build();
         userRepository.save(user);
