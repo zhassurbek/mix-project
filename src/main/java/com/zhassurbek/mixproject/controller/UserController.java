@@ -1,7 +1,7 @@
 package com.zhassurbek.mixproject.controller;
 
 import com.zhassurbek.mixproject.MixProjectApplication;
-import com.zhassurbek.mixproject.dto.response.ErrorUserResponseDto;
+import com.zhassurbek.mixproject.dao.response.ErrorUserResponseDto;
 import com.zhassurbek.mixproject.model.User;
 import com.zhassurbek.mixproject.service.UserService;
 import lombok.RequiredArgsConstructor;

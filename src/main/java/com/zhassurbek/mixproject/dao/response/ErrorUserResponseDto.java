@@ -1,4 +1,4 @@
-package com.zhassurbek.mixproject.dto.response;
+package com.zhassurbek.mixproject.dao.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
