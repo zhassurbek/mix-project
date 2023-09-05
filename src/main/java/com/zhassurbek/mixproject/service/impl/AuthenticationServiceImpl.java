@@ -24,8 +24,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public JwtAuthenticationResponseDto signup(SignUpRequestDto request) {
         var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
-                .username(request.getUsername()).password(passwordEncoder.encode(request.getPassword()))
+                .email(request.getEmail()).username(request.getUsername()).password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER).build();
+
         userRepository.save(user);
         var jwt = jwtService.generateToken(user);
         return JwtAuthenticationResponseDto.builder().token(jwt).build();
