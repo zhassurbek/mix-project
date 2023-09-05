@@ -26,4 +26,9 @@ token:
 
 springdoc:
   api-docs:
-    path: v3/api-docs
+#    http://localhost:8080/v3/api-docs
+    path: /v3/api-docs
+#    customize the path of our API documentation by changing the springdoc.swagger-ui.path property inside our application.properties file
+#  So now our API documentation will be available at http://localhost:8090/swagger-ui-custom.html.
+  swagger-ui:
+    path: /swagger-ui.html
