@@ -32,3 +32,27 @@ springdoc:
 #  So now our API documentation will be available at http://localhost:8090/swagger-ui.html.
   swagger-ui:
     path: /swagger-ui.html
+
+#  feign.okhttp.enabled=true
+#
+#  server.port=8085
+#  spring.main.allow-bean-definition-overriding=true
+#  logging.level.com.baeldung.cloud.openfeign.client=INFO
+#  feign.hystrix.enabled=true
+#
+#  spring.cloud.openfeign.client.config.postClient.url=https://jsonplaceholder.typicode.com/posts/
+#feign:
+#  okhttp:
+#    enabled:true
+#feign:
+#  okhttp:
+#    enabled: true
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 5000
+#        readTimeout: 5000
+#        loggerLevel: basic
+#hystrix:
+#  metrics:
+#    enabled: true
