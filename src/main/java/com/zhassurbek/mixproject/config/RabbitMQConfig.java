@@ -22,7 +22,6 @@ public class RabbitMQConfig {
 
     private final CachingConnectionFactory cachingConnectionFactory;
 
-
 //    @Bean
 //    public Declarables createPostRegistrationSchema() {
 //        return new Declarables(
