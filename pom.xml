@@ -100,6 +100,12 @@
             <version>2.1.0</version>
         </dependency>
 
+<!--        for rabbitmq-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
 <!--        for open-feign-->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.cloud</groupId>-->
