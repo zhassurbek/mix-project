@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @RequiredArgsConstructor
 public class UserRegistrationListenerService {
-
     private final RabbitTemplate rabbitTemplate;
+
 
     @RabbitListener(queues = {"q.user-registration"})
     public void onUserRegistration(RabbitUserRegistrationRequestDto event) {
-        log.info("User Registration Event Recieved: {} ", event);
+        log.info("User Registration Event Received: {}", event);
 
         executeRegistration(event);
 
