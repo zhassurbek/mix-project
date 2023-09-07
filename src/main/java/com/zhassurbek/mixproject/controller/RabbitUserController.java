@@ -23,7 +23,7 @@ public class RabbitUserController {
 
     private final RabbitTemplate rabbitTemplate;
 
-    @PostMapping("/user")
+    @PostMapping("/createUser")
     public ApiResponse createUser(@RequestBody RabbitUserRegistrationRequestDto request) {
 
         rabbitTemplate.convertAndSend("", "user-registration", request);
